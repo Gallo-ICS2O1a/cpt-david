@@ -11,6 +11,7 @@ mons3_spawn = random (mons_size/2, 400-mons_size/2)
 
 def setup():
     size(400, 700)
+    
 def keyReleased():
     global rec_speed
     if keyCode==38:
@@ -22,101 +23,7 @@ def keyReleased():
 def keyPressed(): 
     global horizontal_move
     global movement
-    if keyCode==37:rec_speed=100
-2
-horizontal_move=200
-3
-movement=5
-4
-​
-5
-def setup():
-6
-    size(400, 700)
-7
-def keyReleased():
-8
-    global rec_speed
-9
-    if keyCode==38:
-10
-        rec_speed+=100
-11
-​
-12
-def keyPressed(): 
-13
-    global horizontal_move
-14
-    global movement
-15
     if keyCode==37:
-16
-        horizontal_move-=movement
-17
-    if keyCode==39:
-18
-        horizontal_move+=movement
-19
-    
-20
-        
-21
-def draw():
-22
-    global rec_speed
-23
-    global horizontal_move
-24
-    global movement
-25
-    
-26
-    rec1_y=rec_speed
-27
-    rec2_y=100+rec_speed
-28
-    rec3_y=200+rec_speed
-29
-    rec4_y=300+rec_speed
-30
-    rec5_y=400+rec_speed
-31
-    rec6_y=500+rec_speed
-32
-    
-33
-    background(0)
-34
-        
-35
-    #PLAYER
-36
-    fill(255)
-37
-    ellipse(horizontal_move,575, 50, 50)
-38
-​
-39
-    #LEVELS
-40
-    fill(255, 0, 0)
-41
-    rect (10, rec1_y, 380, 25)
-42
-    rect (10, rec3_y, 380, 25)
-43
-    rect (10, rec5_y, 380, 25)
-44
-    
-45
-    fill(0, 255, 0)
-46
-    rect (10, rec2_y, 380, 25)
-47
-    rect (10, rec4_y, 380, 25)
-48
-    rect (10, rec6_y, 380, 25)
         horizontal_move-=movement
     if keyCode==39:
         horizontal_move+=movement
