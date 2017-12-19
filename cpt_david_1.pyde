@@ -16,10 +16,7 @@ def keyReleased():
     global rec_speed
     if keyCode==38:
         rec_speed+=100
-    if keyCode==40:
-        rec_speed-=100
     
-
 def keyPressed(): 
     global horizontal_move
     global movement
