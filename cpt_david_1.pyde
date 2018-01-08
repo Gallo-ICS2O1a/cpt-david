@@ -2,6 +2,7 @@ set1_speed = 75
 set2_speed = -525
 horizontal_move = 200
 player_movement = 5
+vertical_jump = 100
 mons_size = 50
 mons1_move = random(1, 5)
 mons2_move = random(1, 5)
@@ -26,9 +27,13 @@ def setup():
 def keyReleased():
     global set1_speed
     global set2_speed
+    global vertical_jump
+    global score
     if keyCode == 38:
-        set1_speed += 100
-        set2_speed += 100
+        set1_speed += vertical_jump
+        set2_speed += vertical_jump
+        if vertical_jump == 100:
+            score += 1
 
 
 def keyPressed():
@@ -45,6 +50,7 @@ def draw():
     global set2_speed
     global horizontal_move
     global player_movement
+    global vertical_jump
     global mons_size
     global mons1_move
     global mons2_move
@@ -177,41 +183,83 @@ def draw():
     height1_distance = 575 - rec1_y
     if -75 <= horizontal1_collision <= 25 and -25 <= height1_distance <= 75:
         mons1_move = 0
+        mons2_move = 0
+        mons3_move = 0
+        mons4_move = 0
+        mons5_move = 0
+        mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # MONS2 COLLISION CHECK
     horizontal2_collision = mons2_spawn - horizontal_move
     height2_distance = 575 - rec3_y
     if -75 <= horizontal2_collision <= 25 and -25 <= height2_distance <= 75:
+        mons1_move = 0
         mons2_move = 0
+        mons3_move = 0
+        mons4_move = 0
+        mons5_move = 0
+        mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # MONS3 COLLISION CHECK
     horizontal3_collision = mons3_spawn - horizontal_move
     height3_distance = 575 - rec5_y
     if -75 <= horizontal3_collision <= 25 and -25 <= height3_distance <= 75:
+        mons1_move = 0
+        mons2_move = 0
         mons3_move = 0
+        mons4_move = 0
+        mons5_move = 0
+        mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # MONS4 COLLISION CHECK
     horizontal4_collision = mons4_spawn - horizontal_move
     height4_distance = 575 - rec11_y
     if -75 <= horizontal4_collision <= 25 and -25 <= height4_distance <= 75:
+        mons1_move = 0
+        mons2_move = 0
+        mons3_move = 0
         mons4_move = 0
+        mons5_move = 0
+        mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # MONS5 COLLISION CHECK
     horizontal5_collision = mons5_spawn - horizontal_move
     height5_distance = 575 - rec9_y
     if -75 <= horizontal5_collision <= 25 and -25 <= height5_distance <= 75:
+        mons1_move = 0
+        mons2_move = 0
+        mons3_move = 0
+        mons4_move = 0
         mons5_move = 0
+        mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # MONS6 COLLISION CHECK
     horizontal6_collision = mons6_spawn - horizontal_move
     height6_distance = 575 - rec7_y
     if -75 <= horizontal6_collision <= 25 and -25 <= height6_distance <= 75:
+        mons1_move = 0
+        mons2_move = 0
+        mons3_move = 0
+        mons4_move = 0
+        mons5_move = 0
         mons6_move = 0
+        vertical_jump = 0
+        player_movement = 0
         text("GAME OVER", 200, 300)
 
 # TITLE AND INFO
@@ -219,4 +267,4 @@ def draw():
     textAlign(CENTER)
     text("BALL JUMP", 550, 300)
     textSize(30)
-    text("Score:", 550, 350)
+    text("Score: " + str(score), 550, 350)
