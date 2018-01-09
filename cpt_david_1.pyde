@@ -64,7 +64,7 @@ def draw():
     global mons4_spawn
     global mons5_spawn
     global mons6_spawn
-
+    global score
     noStroke()
 
 # LEVELS
@@ -91,6 +91,8 @@ def draw():
     text("BALL JUMP", 550, 300)
     textSize(30)
     text("Score:", 550, 350)
+    fill(255)
+    ellipse(550, 128, 225, 225)
 
 # PLAYER
     fill(255)
@@ -268,3 +270,27 @@ def draw():
     text("BALL JUMP", 550, 300)
     textSize(30)
     text("Score: " + str(score), 550, 350)
+
+# TRY AGAIN BUTTON
+    fill(4, 98, 107)
+    if vertical_jump == 0 and player_movement == 0:
+        rect(475, 400, 150, 50)
+        fill(255)
+        textSize(25)
+        textAlign(CENTER)
+        text("TRY AGAIN", 550, 432)
+
+    if 475 <= mouseX <= 625 and 400 <= mouseY <= 450 and mousePressed and vertical_jump == 0:
+        set1_speed = 75
+        set2_speed = -525
+        vertical_jump = 100
+        player_movement = 5
+        mons1_move = random(1, 5)
+        mons2_move = random(1, 5)
+        mons3_move = random(1, 5)
+        mons4_move = random(1, 5)
+        mons5_move = random(1, 5)
+        mons6_move = random(1, 5)
+        score = 0
+
+# HIGHSCORE
