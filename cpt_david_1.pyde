@@ -17,7 +17,7 @@ mons4_spawn = random(mons_size, 400 - mons_size)
 mons5_spawn = random(mons_size, 400 - mons_size)
 mons6_spawn = random(mons_size, 400 - mons_size)
 score = 0
-store_score = ""
+store_score = [0]
 
 
 def setup():
@@ -34,6 +34,7 @@ def keyReleased():
         set2_speed += vertical_jump
         if vertical_jump == 100:
             score += 1
+            store_score.append(score)
 
 
 def keyPressed():
@@ -274,13 +275,13 @@ def draw():
 # TRY AGAIN BUTTON
     fill(4, 98, 107)
     if vertical_jump == 0 and player_movement == 0:
-        rect(475, 400, 150, 50)
+        rect(475, 450, 150, 50)
         fill(255)
         textSize(25)
         textAlign(CENTER)
-        text("TRY AGAIN", 550, 432)
+        text("TRY AGAIN", 550, 482)
 
-    if 475 <= mouseX <= 625 and 400 <= mouseY <= 450 and mousePressed and vertical_jump == 0:
+    if 475 <= mouseX <= 625 and 450 <= mouseY <= 500 and mousePressed and vertical_jump == 0:
         set1_speed = 75
         set2_speed = -525
         vertical_jump = 100
@@ -294,3 +295,8 @@ def draw():
         score = 0
 
 # HIGHSCORE
+    if max(store_score) > 0: 
+        fill(0, 57, 44)
+        textSize(25)
+        textAlign(CENTER)
+        text("HIGHSCORE: " + (str(max(store_score))), 550, 392)
