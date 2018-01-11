@@ -69,6 +69,7 @@ def draw():
     noStroke()
 
 # LEVELS
+    noStroke()
     rec1_y = set1_speed
     rec2_y = 100 + set1_speed
     rec3_y = 200 + set1_speed
@@ -76,6 +77,7 @@ def draw():
     rec5_y = 400 + set1_speed
     rec6_y = 500 + set1_speed
 
+# CHARACTER
     rec7_y = set2_speed
     rec8_y = 100 + set2_speed
     rec9_y = 200 + set2_speed
@@ -85,6 +87,7 @@ def draw():
     background(251, 99, 0)
 
 # INFO SCREEN
+
     fill(0, 160, 129)
     rect(400, 0, 300, 675)
     textSize(40)
@@ -92,10 +95,19 @@ def draw():
     text("BALL JUMP", 550, 300)
     textSize(30)
     text("Score:", 550, 350)
+
     fill(255)
     ellipse(550, 128, 225, 225)
+    stroke(0)
+    ellipse(515, 100, 50, 75)
+    ellipse(585, 100, 50, 75)
+    fill(0)
+    ellipse(515, 100, 30, 45)
+    ellipse(585, 100, 30, 45)
+    arc(550, 165, 80, 80, 0, PI, CHORD)
 
 # PLAYER
+    noStroke()
     fill(255)
     horizontal_move = constrain(horizontal_move, 25, 375)
     ellipse(horizontal_move, 550, 50, 50)
@@ -295,7 +307,7 @@ def draw():
         score = 0
 
 # HIGHSCORE
-    if max(store_score) > 0: 
+    if max(store_score) > 0:
         fill(0, 57, 44)
         textSize(25)
         textAlign(CENTER)
