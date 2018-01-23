@@ -189,53 +189,78 @@ def draw():
         if mons1_spawn >= 400 - mons_size:
             mons1_move = -mons1_move
             mons1_spawn += mons1_move
+            if set1_speed == -525 and score != 0:
+                mons1_move -= 0.5
         elif mons1_spawn <= 0:
             mons1_move = - mons1_move
             mons1_spawn += mons1_move
+            if set1_speed == -525 and score != 0:
+                mons1_move += 0.5
 
         rect(mons2_spawn, rec3_y - mons_size, mons_size, mons_size)
         mons2_spawn += mons2_move
         if mons2_spawn >= 400 - mons_size:
             mons2_move = -mons2_move
             mons2_spawn += mons2_move
+            if set1_speed == -525 and score != 0:
+                mons2_move -= 0.5
         elif mons2_spawn <= 0:
             mons2_move = -mons2_move
             mons2_spawn += mons2_move
+            if set1_speed == -525 and score != 0:
+                mons2_move += 0.5
 
         rect(mons3_spawn, rec5_y - mons_size, mons_size, mons_size)
         mons3_spawn += mons3_move
         if mons3_spawn >= 400 - mons_size:
             mons3_move = -mons3_move
             mons3_spawn += mons3_move
+            if set1_speed == -525 and score != 0:
+                mons3_move -= 0.5
         elif mons3_spawn <= 0:
             mons3_move = -mons3_move
             mons3_spawn += mons3_move
+            if set1_speed == -525 and score != 0:
+                mons3_move += 0.5
 
         rect(mons4_spawn, rec11_y - mons_size, mons_size, mons_size)
         mons4_spawn += mons4_move
         if mons4_spawn >= 400 - mons_size:
             mons4_move = -mons4_move
             mons4_spawn += mons4_move
+            if set2_speed == -525 and score != 0:
+                mons4_move -= 0.5
         elif mons4_spawn <= 0:
             mons4_move = -mons4_move
             mons4_spawn += mons4_move
+            if set2_speed == -525 and score != 0:
+                mons4_move += 0.5
 
         rect(mons5_spawn, rec9_y - mons_size, mons_size, mons_size)
         mons5_spawn += mons5_move
         if mons5_spawn >= 400 - mons_size:
             mons5_move = -mons5_move
             mons5_spawn += mons5_move
+            if set2_speed == -525 and score != 0:
+                mons5_move -= 0.5
         elif mons5_spawn <= 0:
             mons5_move = -mons5_move
             mons5_spawn += mons5_move
+            if set2_speed == -525 and score != 0:
+                mons5_move += 0.5
+
         rect(mons6_spawn, rec7_y - mons_size, mons_size, mons_size)
         mons6_spawn += mons6_move
         if mons6_spawn >= 400 - mons_size:
             mons6_move = -mons6_move
             mons6_spawn += mons6_move
+            if set2_speed == -525 and score != 0:
+                mons6_move -= 0.5
         elif mons6_spawn <= 0:
             mons6_move = -mons6_move
             mons6_spawn += mons6_move
+            if set2_speed == -525 and score != 0:
+                mons6_move += 0.5
 
     # MONS1 COLLISION CHECK
         horizontal1_collision = mons1_spawn - horizontal_move
