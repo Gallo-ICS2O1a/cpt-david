@@ -1,5 +1,5 @@
-set1_speed = 75
-set2_speed = -525
+set1_y = 75
+set2_y = -525
 horizontal_move = 200
 player_movement = 5
 vertical_jump = 100
@@ -26,13 +26,13 @@ def setup():
 
 
 def keyReleased():
-    global set1_speed
-    global set2_speed
+    global set1_y
+    global set2_y
     global vertical_jump
     global score
     if keyCode == 38:
-        set1_speed += vertical_jump
-        set2_speed += vertical_jump
+        set1_y += vertical_jump
+        set2_y += vertical_jump
         if vertical_jump == 100:
             score += 1
             store_score.append(score)
@@ -48,8 +48,8 @@ def keyPressed():
 
 
 def draw():
-    global set1_speed
-    global set2_speed
+    global set1_y
+    global set2_y
     global horizontal_move
     global player_movement
     global vertical_jump
@@ -116,20 +116,20 @@ def draw():
     if screen == 1:
         # LEVELS
         noStroke()
-        rec1_y = set1_speed
-        rec2_y = 100 + set1_speed
-        rec3_y = 200 + set1_speed
-        rec4_y = 300 + set1_speed
-        rec5_y = 400 + set1_speed
-        rec6_y = 500 + set1_speed
+        rec1_y = set1_y
+        rec2_y = 100 + set1_y
+        rec3_y = 200 + set1_y
+        rec4_y = 300 + set1_y
+        rec5_y = 400 + set1_y
+        rec6_y = 500 + set1_y
 
     # CHARACTER
-        rec7_y = set2_speed
-        rec8_y = 100 + set2_speed
-        rec9_y = 200 + set2_speed
-        rec10_y = 300 + set2_speed
-        rec11_y = 400 + set2_speed
-        rec12_y = 500 + set2_speed
+        rec7_y = set2_y
+        rec8_y = 100 + set2_y
+        rec9_y = 200 + set2_y
+        rec10_y = 300 + set2_y
+        rec11_y = 400 + set2_y
+        rec12_y = 500 + set2_y
         background(251, 99, 0)
 
     # INFO SCREEN
@@ -176,11 +176,11 @@ def draw():
         rect(10, rec12_y, 380, 25)
 
     # LOOP LEVELS
-        if set1_speed >= 675:
-            set1_speed = -525
+        if set1_y >= 675:
+            set1_y = -525
 
-        if set2_speed >= 675:
-            set2_speed = -525
+        if set2_y >= 675:
+            set2_y = -525
 
     # MONSTERS
         fill(0, 57, 44)
@@ -189,12 +189,12 @@ def draw():
         if mons1_spawn >= 400 - mons_size:
             mons1_move = -mons1_move
             mons1_spawn += mons1_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons1_move -= 0.5
         elif mons1_spawn <= 0:
             mons1_move = - mons1_move
             mons1_spawn += mons1_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons1_move += 0.5
 
         rect(mons2_spawn, rec3_y - mons_size, mons_size, mons_size)
@@ -202,12 +202,12 @@ def draw():
         if mons2_spawn >= 400 - mons_size:
             mons2_move = -mons2_move
             mons2_spawn += mons2_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons2_move -= 0.5
         elif mons2_spawn <= 0:
             mons2_move = -mons2_move
             mons2_spawn += mons2_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons2_move += 0.5
 
         rect(mons3_spawn, rec5_y - mons_size, mons_size, mons_size)
@@ -215,12 +215,12 @@ def draw():
         if mons3_spawn >= 400 - mons_size:
             mons3_move = -mons3_move
             mons3_spawn += mons3_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons3_move -= 0.5
         elif mons3_spawn <= 0:
             mons3_move = -mons3_move
             mons3_spawn += mons3_move
-            if set1_speed == -525 and score != 0:
+            if set1_y == -525 and score != 0:
                 mons3_move += 0.5
 
         rect(mons4_spawn, rec11_y - mons_size, mons_size, mons_size)
@@ -228,12 +228,12 @@ def draw():
         if mons4_spawn >= 400 - mons_size:
             mons4_move = -mons4_move
             mons4_spawn += mons4_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons4_move -= 0.5
         elif mons4_spawn <= 0:
             mons4_move = -mons4_move
             mons4_spawn += mons4_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons4_move += 0.5
 
         rect(mons5_spawn, rec9_y - mons_size, mons_size, mons_size)
@@ -241,12 +241,12 @@ def draw():
         if mons5_spawn >= 400 - mons_size:
             mons5_move = -mons5_move
             mons5_spawn += mons5_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons5_move -= 0.5
         elif mons5_spawn <= 0:
             mons5_move = -mons5_move
             mons5_spawn += mons5_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons5_move += 0.5
 
         rect(mons6_spawn, rec7_y - mons_size, mons_size, mons_size)
@@ -254,12 +254,12 @@ def draw():
         if mons6_spawn >= 400 - mons_size:
             mons6_move = -mons6_move
             mons6_spawn += mons6_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons6_move -= 0.5
         elif mons6_spawn <= 0:
             mons6_move = -mons6_move
             mons6_spawn += mons6_move
-            if set2_speed == -525 and score != 0:
+            if set2_y == -525 and score != 0:
                 mons6_move += 0.5
 
     # MONS1 COLLISION CHECK
@@ -370,8 +370,8 @@ def draw():
 
         if 475 <= mouseX <= 625 and 525 <= mouseY <= 575:
             if mousePressed and vertical_jump == 0:
-                set1_speed = 75
-                set2_speed = -525
+                set1_y = 75
+                set2_y = -525
                 vertical_jump = 100
                 player_movement = 5
                 mons1_move = random(1, 5)
